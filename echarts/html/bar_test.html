@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>柱形图</title>
+    <!--引入echarts.js这个文件-->
+    <script src="../js/echarts.js"></script>
+</head>
+<body>
+    <!--定义画布-->
+    <div id="main" style="height: 400px;width: 600px"></div>
+    <script type="text/javascript">
+        // 进行echarts的初始化，以及定位到画布
+        var mychart = echarts.init(document.getElementById("main"))
+        // 配置项和配置数据
+        var option = {
+            // 标题
+            title:{
+                text:'echarts入门示例'
+            },
+            // 图例
+            // legend:{
+            //     data:['销量']
+            // },
+            // 横轴
+            xAxis:{
+                data:['衬衫','羊毛衫','雪纺衫','裤子','高跟鞋','袜子']
+            },
+            // 纵轴
+            yAxis:{},
+            // 数据
+            series:[
+                {
+                    name:'销量',
+                    // 柱形图
+                    type:'bar',
+                    // data:[5,20,36,10,10,20]
+                    data:[
+                        {
+                            name:'衬衫',
+                            value:5
+                        },
+                        {
+                            name:'羊毛衫',
+                            value:20
+                        }
+                    ]
+                }
+            ]
+        };
+        mychart.setOption(option)
+    </script>
+
+</body>
+</html>
